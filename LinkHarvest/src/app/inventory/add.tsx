@@ -13,41 +13,60 @@ import {
 } from "react-native";
 import { supabase } from "../../lib/supabase";
 
-export default function AddSupplyScreen() {
-  const [name, setName] = useState("");
+export default function AddDemand() {
+  const [productName, setProductName] = useState("");
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState("");
   const [unit, setUnit] = useState("kg");
-  const [price, setPrice] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [requiredBy, setRequiredBy] = useState("");
   const [district, setDistrict] = useState("");
+  const [city, setCity] = useState("");
   const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleAddSupply = async () => {
-    if (!name.trim() || !quantity.trim()) {
+  async function submitDemand() {
+    if (!productName.trim() || !quantity.trim()) {
       Alert.alert(
         "Missing information",
-        "Please enter the product name and quantity."
+        "Please enter the product and required quantity."
       );
       return;
     }
 
-    const parsedQuantity = Number(quantity);
-    const parsedPrice = price.trim() ? Number(price) : null;
+    const numericQuantity = Number(quantity);
 
-    if (isNaN(parsedQuantity) || parsedQuantity <= 0) {
+    if (isNaN(numericQuantity) || numericQuantity <= 0) {
       Alert.alert("Invalid quantity", "Enter a valid quantity.");
       return;
     }
 
-    if (price.trim() && (isNaN(parsedPrice!) || parsedPrice! < 0)) {
-      Alert.alert("Invalid price", "Enter a valid expected price.");
+    if (minPrice && isNaN(Number(minPrice))) {
+      Alert.alert("Invalid price", "Enter a valid minimum price.");
       return;
     }
 
-    try {
-      setLoading(true);
+    if (maxPrice && isNaN(Number(maxPrice))) {
+      Alert.alert("Invalid price", "Enter a valid maximum price.");
+      return;
+    }
 
+    if (
+      minPrice &&
+      maxPrice &&
+      Number(minPrice) > Number(maxPrice)
+    ) {
+      Alert.alert(
+        "Invalid price range",
+        "Minimum price cannot be greater than maximum price."
+      );
+      return;
+    }
+
+    setLoading(true);
+
+    try {
       const {
         data: { user },
       } = await supabase.auth.getUser();
@@ -58,44 +77,44 @@ export default function AddSupplyScreen() {
         return;
       }
 
-      const { error } = await supabase.from("products").insert({
-        producer_id: user.id,
-        name: name.trim(),
+      const { error } = await supabase.from("demands").insert({
+        buyer_id: user.id,
+        product_name: productName.trim(),
         category: category.trim() || null,
-        quantity: parsedQuantity,
+        required_quantity: numericQuantity,
         unit: unit.trim() || "kg",
-        expected_price: parsedPrice,
+        min_price: minPrice ? Number(minPrice) : null,
+        max_price: maxPrice ? Number(maxPrice) : null,
+        required_by: requiredBy.trim() || null,
         district: district.trim() || null,
-        notes: notes.trim() || null,
+        city: city.trim() || null,
         status: "active",
+        notes: notes.trim() || null,
       });
 
       if (error) {
-        Alert.alert("Couldn't add product", error.message);
-        return;
+        throw error;
       }
 
       Alert.alert(
-        "Supply added!",
-        `${name.trim()} has been added to your inventory.`,
+        "Demand posted",
+        "Your demand is now visible in LinkHarvest.",
         [
           {
-            text: "Done",
-            onPress: () => router.replace("/dashboard/producer"),
+            text: "View demands",
+            onPress: () => router.replace("/dashboard/buyer"),
           },
         ]
       );
-    } catch (error) {
-      console.log(error);
-
+    } catch (error: any) {
       Alert.alert(
-        "Something went wrong",
-        "Please check your internet connection and try again."
+        "Couldn't post demand",
+        error?.message || "Something went wrong."
       );
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   return (
     <KeyboardAvoidingView
@@ -105,113 +124,153 @@ export default function AddSupplyScreen() {
       <ScrollView
         contentContainerStyle={styles.content}
         keyboardShouldPersistTaps="handled"
-        showsVerticalScrollIndicator={false}
       >
-        <TouchableOpacity onPress={() => router.back()}>
-          <Text style={styles.back}>← Back</Text>
+        <TouchableOpacity
+          onPress={() => router.back()}
+          style={styles.backButton}
+        >
+          <Text style={styles.backText}>‹ Back</Text>
         </TouchableOpacity>
 
-        <Text style={styles.title}>Add supply</Text>
+        <Text style={styles.eyebrow}>BUYER</Text>
+
+        <Text style={styles.title}>Post a demand</Text>
 
         <Text style={styles.subtitle}>
-          Tell buyers what you currently have available.
+          Tell local producers what you need. LinkHarvest will help
+          connect the right supply to you.
         </Text>
 
-        <View style={styles.form}>
-          <Text style={styles.label}>Product name *</Text>
+        <Text style={styles.label}>What do you need?</Text>
 
-          <TextInput
-            style={styles.input}
-            placeholder="e.g. Tomato"
-            placeholderTextColor="#929892"
-            value={name}
-            onChangeText={setName}
-          />
+        <TextInput
+          style={styles.input}
+          placeholder="e.g. Tomato"
+          placeholderTextColor="#92988F"
+          value={productName}
+          onChangeText={setProductName}
+        />
 
-          <Text style={styles.label}>Category</Text>
+        <Text style={styles.label}>Category</Text>
 
-          <TextInput
-            style={styles.input}
-            placeholder="e.g. Vegetables"
-            placeholderTextColor="#929892"
-            value={category}
-            onChangeText={setCategory}
-          />
+        <TextInput
+          style={styles.input}
+          placeholder="e.g. Vegetables"
+          placeholderTextColor="#92988F"
+          value={category}
+          onChangeText={setCategory}
+        />
 
-          <Text style={styles.label}>Quantity *</Text>
+        <View style={styles.row}>
+          <View style={styles.quantityBox}>
+            <Text style={styles.label}>Quantity</Text>
 
-          <View style={styles.quantityRow}>
             <TextInput
-              style={[styles.input, styles.quantityInput]}
-              placeholder="e.g. 500"
-              placeholderTextColor="#929892"
+              style={styles.input}
+              placeholder="500"
+              placeholderTextColor="#92988F"
               keyboardType="numeric"
               value={quantity}
               onChangeText={setQuantity}
             />
+          </View>
+
+          <View style={styles.unitBox}>
+            <Text style={styles.label}>Unit</Text>
 
             <TextInput
-              style={[styles.input, styles.unitInput]}
+              style={styles.input}
               placeholder="kg"
-              placeholderTextColor="#929892"
+              placeholderTextColor="#92988F"
               value={unit}
               onChangeText={setUnit}
             />
           </View>
+        </View>
 
-          <Text style={styles.label}>Expected price</Text>
+        <Text style={styles.label}>Acceptable price range</Text>
 
-          <View style={styles.priceRow}>
-            <View style={styles.rupeeBox}>
-              <Text style={styles.rupee}>₹</Text>
-            </View>
-
+        <View style={styles.row}>
+          <View style={styles.priceBox}>
             <TextInput
-              style={[styles.input, styles.priceInput]}
-              placeholder="e.g. 32 per kg"
-              placeholderTextColor="#929892"
+              style={styles.input}
+              placeholder="Min ₹"
+              placeholderTextColor="#92988F"
               keyboardType="numeric"
-              value={price}
-              onChangeText={setPrice}
+              value={minPrice}
+              onChangeText={setMinPrice}
             />
           </View>
 
-          <Text style={styles.helper}>
-            Buyers will see this as your expected price.
-          </Text>
-
-          <Text style={styles.label}>District</Text>
-
-          <TextInput
-            style={styles.input}
-            placeholder="e.g. Thiruvananthapuram"
-            placeholderTextColor="#929892"
-            value={district}
-            onChangeText={setDistrict}
-          />
-
-          <Text style={styles.label}>Notes</Text>
-
-          <TextInput
-            style={[styles.input, styles.notesInput]}
-            placeholder="Quality, variety, availability details..."
-            placeholderTextColor="#929892"
-            multiline
-            textAlignVertical="top"
-            value={notes}
-            onChangeText={setNotes}
-          />
-
-          <TouchableOpacity
-            style={[styles.button, loading && styles.disabledButton]}
-            onPress={handleAddSupply}
-            disabled={loading}
-          >
-            <Text style={styles.buttonText}>
-              {loading ? "Adding supply..." : "Add to inventory"}
-            </Text>
-          </TouchableOpacity>
+          <View style={styles.priceBox}>
+            <TextInput
+              style={styles.input}
+              placeholder="Max ₹"
+              placeholderTextColor="#92988F"
+              keyboardType="numeric"
+              value={maxPrice}
+              onChangeText={setMaxPrice}
+            />
+          </View>
         </View>
+
+        <Text style={styles.label}>Required by</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="YYYY-MM-DD"
+          placeholderTextColor="#92988F"
+          value={requiredBy}
+          onChangeText={setRequiredBy}
+          autoCapitalize="none"
+        />
+
+        <Text style={styles.label}>Location</Text>
+
+        <TextInput
+          style={styles.input}
+          placeholder="District"
+          placeholderTextColor="#92988F"
+          value={district}
+          onChangeText={setDistrict}
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="City"
+          placeholderTextColor="#92988F"
+          value={city}
+          onChangeText={setCity}
+        />
+
+        <Text style={styles.label}>Additional notes</Text>
+
+        <TextInput
+          style={[styles.input, styles.notes]}
+          placeholder="Quality requirements, preferred variety, delivery details..."
+          placeholderTextColor="#92988F"
+          value={notes}
+          onChangeText={setNotes}
+          multiline
+          textAlignVertical="top"
+        />
+
+        <TouchableOpacity
+          style={[
+            styles.submitButton,
+            loading && styles.disabledButton,
+          ]}
+          onPress={submitDemand}
+          disabled={loading}
+        >
+          <Text style={styles.submitText}>
+            {loading ? "Posting..." : "Post Demand"}
+          </Text>
+        </TouchableOpacity>
+
+        <Text style={styles.footerText}>
+          Your demand can later be matched with nearby producers.
+        </Text>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -220,124 +279,109 @@ export default function AddSupplyScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F7F8F2",
+    backgroundColor: "#F7F8F4",
   },
 
   content: {
-    padding: 22,
-    paddingTop: 60,
+    padding: 24,
+    paddingTop: 55,
     paddingBottom: 50,
   },
 
-  back: {
+  backButton: {
+    marginBottom: 28,
+  },
+
+  backText: {
     fontSize: 16,
-    color: "#365B3A",
-    fontWeight: "700",
-    marginBottom: 30,
+    fontWeight: "600",
+    color: "#4E5E49",
+  },
+
+  eyebrow: {
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 2,
+    color: "#66705D",
+    marginBottom: 8,
   },
 
   title: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: "800",
-    color: "#172117",
+    color: "#182018",
   },
 
   subtitle: {
     fontSize: 15,
-    color: "#687168",
     lineHeight: 22,
+    color: "#737A70",
     marginTop: 8,
-    marginBottom: 25,
-  },
-
-  form: {
-    width: "100%",
+    marginBottom: 28,
   },
 
   label: {
     fontSize: 14,
     fontWeight: "700",
-    color: "#303830",
-    marginTop: 17,
+    color: "#394238",
     marginBottom: 8,
+    marginTop: 15,
   },
 
   input: {
-    height: 54,
-    borderWidth: 1,
-    borderColor: "#D8DDD4",
-    borderRadius: 14,
     backgroundColor: "#FFFFFF",
-    paddingHorizontal: 16,
-    fontSize: 16,
-    color: "#172117",
-  },
-
-  quantityRow: {
-    flexDirection: "row",
-    gap: 10,
-  },
-
-  quantityInput: {
-    flex: 1,
-  },
-
-  unitInput: {
-    width: 90,
-  },
-
-  priceRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  },
-
-  rupeeBox: {
-    height: 54,
-    width: 54,
+    borderWidth: 1,
+    borderColor: "#E0E4DC",
     borderRadius: 14,
-    backgroundColor: "#E7EFE2",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingHorizontal: 15,
+    paddingVertical: 14,
+    fontSize: 15,
+    color: "#202820",
   },
 
-  rupee: {
-    fontSize: 20,
-    fontWeight: "800",
-    color: "#365B3A",
+  row: {
+    flexDirection: "row",
+    gap: 10,
   },
 
-  priceInput: {
+  quantityBox: {
+    flex: 2,
+  },
+
+  unitBox: {
     flex: 1,
   },
 
-  helper: {
-    fontSize: 12,
-    color: "#858C85",
-    marginTop: 7,
+  priceBox: {
+    flex: 1,
   },
 
-  notesInput: {
-    height: 100,
-    paddingTop: 15,
+  notes: {
+    minHeight: 110,
   },
 
-  button: {
-    height: 56,
+  submitButton: {
+    backgroundColor: "#243524",
     borderRadius: 16,
-    backgroundColor: "#365B3A",
+    paddingVertical: 17,
     alignItems: "center",
-    justifyContent: "center",
-    marginTop: 30,
+    marginTop: 28,
   },
 
   disabledButton: {
     opacity: 0.6,
   },
 
-  buttonText: {
+  submitText: {
     color: "#FFFFFF",
     fontSize: 16,
     fontWeight: "800",
+  },
+
+  footerText: {
+    textAlign: "center",
+    color: "#858B82",
+    fontSize: 12,
+    marginTop: 14,
   },
 });
