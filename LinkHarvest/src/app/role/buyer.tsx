@@ -97,6 +97,15 @@ export default function BuyerDashboard() {
         <Text style={styles.sectionTitle}>My Active Demands</Text>
         <Text style={styles.count}>{demands.length}</Text>
       </View>
+      <TouchableOpacity
+  style={styles.matchButton}
+  onPress={() => router.push("/dashboard/matches")}
+>
+  <Text style={styles.matchButtonText}>
+    Find Producer Matches →
+  </Text>
+</TouchableOpacity>
+
 
       {loading ? (
         <ActivityIndicator size="large" />
@@ -250,6 +259,21 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 8,
   },
+
+  matchButton: {
+  backgroundColor: "#E5EEE1",
+  paddingVertical: 16,
+  borderRadius: 16,
+  alignItems: "center",
+  marginBottom: 30,
+},
+
+matchButtonText: {
+  color: "#385035",
+  fontSize: 15,
+  fontWeight: "800",
+},
+
 
   badgeText: {
     fontSize: 10,
