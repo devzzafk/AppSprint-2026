@@ -1,211 +1,263 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useState } from "react";
 import {
+    Alert,
     KeyboardAvoidingView,
     Platform,
-    Pressable,
-    SafeAreaView,
     ScrollView,
     StyleSheet,
     Text,
     TextInput,
+    TouchableOpacity,
     View,
 } from "react-native";
+import { supabase } from "../../lib/supabase";
 
 export default function RegisterScreen() {
-  const router = useRouter();
-
-  const { role } = useLocalSearchParams<{ role?: string }>();
-
-  const isProducer = role === "producer";
+  const { role } = useLocalSearchParams<{ role: string }>();
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleRegister = async () => {
+    if (!name || !phone || !email || !password) {
+      Alert.alert("Missing information", "Please fill in all fields.");
+      return;
+    }
+
+    if (password.length < 6) {
+      Alert.alert(
+        "Password too short",
+        "Password must contain at least 6 characters."
+      );
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const { data, error } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+      });
+
+      if (error) {
+        Alert.alert("Registration failed", error.message);
+        return;
+      }
+
+      if (!data.user) {
+        Alert.alert("Registration failed", "Could not create your account.");
+        return;
+      }
+
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .insert({
+          id: data.user.id,
+          name: name.trim(),
+          phone: phone.trim(),
+          role: role === "buyer" ? "buyer" : "producer",
+        });
+
+      if (profileError) {
+        Alert.alert("Profile error", profileError.message);
+        return;
+      }
+
+      Alert.alert(
+        "Account created!",
+        "Your LinkHarvest account has been created successfully.",
+        [
+          {
+            text: "Continue",
+            onPress: () => router.replace("/"),
+          },
+        ]
+      );
+    } catch (error) {
+      Alert.alert(
+        "Something went wrong",
+        "Please check your internet connection and try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-        style={styles.flex}
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+    >
+      <ScrollView
+        contentContainerStyle={styles.content}
+        keyboardShouldPersistTaps="handled"
       >
-        <ScrollView
-          contentContainerStyle={styles.content}
-          keyboardShouldPersistTaps="handled"
-        >
-          <Pressable onPress={() => router.back()}>
-            <Text style={styles.back}>← Back</Text>
-          </Pressable>
+        <TouchableOpacity onPress={() => router.back()}>
+          <Text style={styles.back}>← Back</Text>
+        </TouchableOpacity>
 
-          <View style={styles.header}>
-            <Text style={styles.icon}>
-              {isProducer ? "🌱" : "🛒"}
+        <View style={styles.header}>
+          <Text style={styles.logo}>LinkHarvest</Text>
+
+          <Text style={styles.title}>Create your account</Text>
+
+          <Text style={styles.subtitle}>
+            Join the local market network as a{" "}
+            {role === "buyer" ? "buyer" : "producer"}.
+          </Text>
+        </View>
+
+        <View style={styles.form}>
+          <Text style={styles.label}>Full name</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your name"
+            placeholderTextColor="#8A8A8A"
+            value={name}
+            onChangeText={setName}
+          />
+
+          <Text style={styles.label}>Phone number</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your phone number"
+            placeholderTextColor="#8A8A8A"
+            keyboardType="phone-pad"
+            value={phone}
+            onChangeText={setPhone}
+          />
+
+          <Text style={styles.label}>Email</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your email"
+            placeholderTextColor="#8A8A8A"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            value={email}
+            onChangeText={setEmail}
+          />
+
+          <Text style={styles.label}>Password</Text>
+
+          <TextInput
+            style={styles.input}
+            placeholder="Create a password"
+            placeholderTextColor="#8A8A8A"
+            secureTextEntry
+            value={password}
+            onChangeText={setPassword}
+          />
+
+          <TouchableOpacity
+            style={[styles.button, loading && styles.disabledButton]}
+            onPress={handleRegister}
+            disabled={loading}
+          >
+            <Text style={styles.buttonText}>
+              {loading ? "Creating account..." : "Create account"}
             </Text>
+          </TouchableOpacity>
 
-            <Text style={styles.title}>Create your account</Text>
-
-            <Text style={styles.subtitle}>
-              {isProducer
-                ? "Start finding markets for what you produce."
-                : "Start finding local producers for what you need."}
+          <TouchableOpacity
+            style={styles.loginButton}
+            onPress={() => router.push("/auth/login")}
+          >
+            <Text style={styles.loginText}>
+              Already have an account? <Text style={styles.loginBold}>Log in</Text>
             </Text>
-          </View>
-
-          <View style={styles.form}>
-            <Text style={styles.label}>
-              {isProducer
-                ? "Full name"
-                : "Business / organization name"}
-            </Text>
-
-            <TextInput
-              style={styles.input}
-              placeholder={
-                isProducer
-                  ? "Enter your full name"
-                  : "Enter business name"
-              }
-              placeholderTextColor="#9AA69E"
-              value={name}
-              onChangeText={setName}
-            />
-
-            <Text style={styles.label}>Phone number</Text>
-
-            <TextInput
-              style={styles.input}
-              placeholder="Enter phone number"
-              placeholderTextColor="#9AA69E"
-              keyboardType="phone-pad"
-              value={phone}
-              onChangeText={setPhone}
-            />
-
-            <Text style={styles.label}>Email</Text>
-
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your email"
-              placeholderTextColor="#9AA69E"
-              keyboardType="email-address"
-              autoCapitalize="none"
-              value={email}
-              onChangeText={setEmail}
-            />
-
-            <Text style={styles.label}>Password</Text>
-
-            <TextInput
-              style={styles.input}
-              placeholder="Create a password"
-              placeholderTextColor="#9AA69E"
-              secureTextEntry
-              value={password}
-              onChangeText={setPassword}
-            />
-
-            <Pressable
-              style={styles.button}
-              onPress={() => router.push("/auth/login")}
-            >
-              <Text style={styles.buttonText}>
-                Create account
-              </Text>
-            </Pressable>
-
-            <View style={styles.loginRow}>
-              <Text style={styles.loginText}>
-                Already have an account?
-              </Text>
-
-              <Pressable
-                onPress={() => router.push("/auth/login")}
-              >
-                <Text style={styles.loginLink}> Log in</Text>
-              </Pressable>
-            </View>
-          </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  flex: {
-    flex: 1,
-  },
-
   container: {
     flex: 1,
-    backgroundColor: "#F7F9F5",
+    backgroundColor: "#F7F8F2",
   },
 
   content: {
-    padding: 28,
-    paddingBottom: 40,
+    padding: 24,
+    paddingTop: 60,
+    paddingBottom: 50,
   },
 
   back: {
     fontSize: 16,
+    color: "#365B3A",
     fontWeight: "600",
-    color: "#53635A",
+    marginBottom: 35,
   },
 
   header: {
-    marginTop: 42,
-    marginBottom: 32,
+    marginBottom: 35,
   },
 
-  icon: {
-    fontSize: 36,
-    marginBottom: 18,
+  logo: {
+    fontSize: 18,
+    fontWeight: "800",
+    color: "#365B3A",
+    marginBottom: 25,
   },
 
   title: {
-    fontSize: 31,
+    fontSize: 32,
     fontWeight: "800",
-    color: "#173F2A",
+    color: "#172117",
+    marginBottom: 10,
   },
 
   subtitle: {
-    marginTop: 10,
-    fontSize: 15,
-    lineHeight: 22,
-    color: "#68756D",
+    fontSize: 16,
+    lineHeight: 24,
+    color: "#687168",
   },
 
   form: {
-    gap: 5,
+    width: "100%",
   },
 
   label: {
     fontSize: 14,
     fontWeight: "700",
-    color: "#344239",
-    marginTop: 12,
-    marginBottom: 6,
+    color: "#303830",
+    marginBottom: 8,
+    marginTop: 16,
   },
 
   input: {
     height: 54,
     borderWidth: 1,
-    borderColor: "#D8E1DA",
-    borderRadius: 15,
+    borderColor: "#D8DDD4",
+    borderRadius: 14,
     backgroundColor: "#FFFFFF",
     paddingHorizontal: 16,
-    fontSize: 15,
-    color: "#25352B",
+    fontSize: 16,
+    color: "#172117",
   },
 
   button: {
     height: 56,
-    borderRadius: 17,
-    backgroundColor: "#173F2A",
+    borderRadius: 16,
+    backgroundColor: "#365B3A",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 25,
+    marginTop: 30,
+  },
+
+  disabledButton: {
+    opacity: 0.6,
   },
 
   buttonText: {
@@ -214,20 +266,18 @@ const styles = StyleSheet.create({
     fontWeight: "800",
   },
 
-  loginRow: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: 20,
+  loginButton: {
+    alignItems: "center",
+    marginTop: 22,
   },
 
   loginText: {
-    color: "#68756D",
+    color: "#687168",
     fontSize: 14,
   },
 
-  loginLink: {
-    color: "#173F2A",
-    fontSize: 14,
+  loginBold: {
+    color: "#365B3A",
     fontWeight: "800",
   },
 });
