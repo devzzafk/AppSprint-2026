@@ -214,13 +214,8 @@ Your video should show:
 ---
 
 # 📦 APK Download
-
-
-
-Add your release link below:
-
 ```
-https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases
+https://github.com/devzzafk/AppSprint-2026/releases/tag/v1.0.0
 ```
 
 ---
