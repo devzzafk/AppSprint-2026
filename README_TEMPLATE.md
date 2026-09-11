@@ -18,71 +18,151 @@
 
 ## Team Name
 
-`Your Team Name`
+Team Name: LinkHarvest
+Team Size: 1
+Participation Type: Individual
 
-## Members
+Team Member:
 
-| Name | Role |
-|---|---|
-| Member 1 | Developer |
-| Member 2 | Designer |
-| Member 3 | Developer |
-| Member 4 | Developer |
+Devi Chandran S
 
 ## Challenge Track
 
 Choose one:
 
-- 📚 EduTech
-- 🏥 HealthTech
-- 🏙️ CivicTech
+
 - 🌾 AgriTech / LocalTech
-- 💡 Open Innovation
+ A demand-driven market linkage platform connecting local producers with commercial buyers through intelligent matching, direct negotiation, and regional supply intelligence ! 
 
 ---
 
 # 📖 Problem Statement
 
-Describe the real-world problem your application solves.
+## The problem isn't always production. It's market access.
 
-Include:
+Small farmers and local producers often have products ready to sell but struggle to find the **right buyer at the right time, quantity, location, and price**.
 
-- Who faces this problem?
-- Why is this problem important?
-- What challenges exist currently?
+At the same time, restaurants, hotels, hospitals, retailers, wholesalers, and other commercial buyers regularly need specific agricultural products but face difficulty discovering reliable local suppliers who can meet their requirements.
 
-Example:
+This creates a disconnect between **available supply and actual demand**.
 
-> Students struggle to manage their academic schedules and deadlines efficiently. Existing solutions lack personalization and student-focused features.
+### Who faces this problem?
 
+**Local Producers**
+- Farmers and small-scale producers with harvest-ready products
+- Producer collectives and local suppliers
+- Producers operating with limited access to digital markets
+
+**Commercial Buyers**
+- Restaurants and hotels
+- Hospitals and institutional kitchens
+- Retailers and wholesalers
+- Businesses requiring predictable agricultural supply
+
+### Why is this important?
+
+A producer may have hundreds of kilograms of a crop available while a nearby business may simultaneously be looking for that exact product.
+
+Yet the two may never discover each other.
+
+This can lead to:
+
+Available Supply
+       ↓
+Poor Market Visibility
+       ↓
+Missed Buyer Connections
+       ↓
+Unsold / Under-valued Produce
 ---
 
 # 💡 Solution
 
-Explain your application's solution.
+## A reverse marketplace built around real demand.
 
-Include:
+**LinkHarvest** changes the traditional agricultural marketplace model.
 
-- How your app solves the problem
-- Main workflow
-- Key innovation
-- Expected impact
+Instead of asking producers to list their products and wait for buyers to discover them, commercial buyers can **post what they actually need**, and LinkHarvest identifies producers who can potentially fulfill that demand.
 
+The platform creates a direct loop:
+
+> **Demand → Match → Connect → Trade**
+
+---
+
+## How LinkHarvest Solves the Problem
+
+### 01 // Buyers publish real demand
+
+Commercial buyers can create structured requirements including:
+
+- Crop / product
+- Quantity required
+- Quality or grade
+- Target price
+- Delivery deadline
+- Location
+
+This transforms vague market demand into a **specific procurement opportunity**.
+
+### 02 // Producers discover relevant opportunities
+
+Producers don't have to manually search through hundreds of listings.
+
+LinkHarvest surfaces buyer demands that align with their available or expected supply.
+
+A producer can see:
+
+```text
+WHAT CAN I SELL?
+
+Banana
+300 kg available
+
+92% MATCH
+
+Buyer needs
+250 kg
+
+Target price
+₹40 – ₹45 / kg
+
+Distance
+12 km
 ---
 
 # ✨ Features
 
-List your application's main features.
+## `01` Reverse Marketplace
 
-Example:
+**Demand → Supply**
 
-- User authentication
-- Personalized dashboard
-- Real-time updates
-- Offline support
-- Notifications
-- AI-powered recommendations
+- Commercial buyers post real-time procurement requirements.
+- Producers discover active buyer demands matching their crops.
+- Dedicated Producer and Buyer workspaces.
+- Seamless role switching between Producer and Buyer.
 
+---
+
+## `02` HarvestMatch Engine
+
+**Find the right producer for the right demand.**
+
+- 0–100% Fit Index
+- Crop & quality compatibility
+- Price parity analysis
+- Geospatial proximity
+- Quantity & batch alignment
+- Transparent score breakdown
+- Explainable matching instead of black-box recommendations
+
+```text
+Crop & Quality       35%
+Price Parity         25%
+Proximity            20%
+Quantity             20%
+────────────────────────
+Total               100%
 ---
 
 # 📱 Screenshots
@@ -135,7 +215,7 @@ Your video should show:
 
 # 📦 APK Download
 
-Upload your APK using GitHub Releases.
+
 
 Add your release link below:
 
@@ -147,42 +227,73 @@ https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/releases
 
 # 🛠️ Tech Stack
 
+LinkHarvest is built as a cross-platform mobile application with a cloud-backed architecture and an offline-first design.
+
+---
+
 ## Frontend / Mobile Framework
 
-Example:
+- **React Native** — Cross-platform mobile application
+- **Expo** — Development and application tooling
+- **TypeScript** — Type-safe application development
+- **Expo Router** — File-based navigation
 
-- Flutter + Dart
-- React Native
-- Kotlin
-- Swift
-- Other
+---
 
 ## Backend
 
-Example:
+- **Supabase** — Backend-as-a-Service
+- **Supabase Auth** — User authentication and session management
+- **Supabase REST** — Database access from the application
+- **Supabase Realtime** — Real-time data synchronization
+- **Supabase Storage** — File and media storage
 
-- Firebase
-- Node.js
-- Supabase
-- Appwrite
+---
 
 ## Database
 
-Example:
+- **PostgreSQL** — Primary cloud database
+- **Local persistence / Sync Queue** — Offline-first data handling
 
-- Firestore
-- SQLite
-- MongoDB
-- PostgreSQL
+Core database entities include:
 
-## APIs / Services Used
+Profiles
+Products
+Demands
+Connections
 
-List external services:
+APIS USED
 
-- Maps API
-- AI API
-- Payment API
-- Other integrations
+| Service                 | Purpose                              |
+| ----------------------- | ------------------------------------ |
+| **Supabase Auth**       | Authentication & user sessions       |
+| **Supabase PostgreSQL** | Application data                     |
+| **Supabase Realtime**   | Live data synchronization            |
+| **Supabase Storage**    | File / media storage                 |
+| **Geospatial Services** | Distance and regional matching       |
+| **Voice Processing**    | Voice-to-structured listing workflow |
+
+┌─────────────────────────────┐
+│      React Native + Expo    │
+│         TypeScript          │
+└──────────────┬──────────────┘
+               │
+               ↓
+┌─────────────────────────────┐
+│      Application Services   │
+│                             │
+│  HarvestMatch │ Offline     │
+│  Voice        │ Logistics   │
+└──────────────┬──────────────┘
+               │
+               ↓
+┌─────────────────────────────┐
+│          Supabase           │
+│                             │
+│ Auth │ REST │ Realtime      │
+│ Storage │ PostgreSQL        │
+└─────────────────────────────┘
+
 
 ---
 
