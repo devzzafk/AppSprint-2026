@@ -491,7 +491,7 @@ LinkHarvest includes:
 ## 01 // Dual Persona Entry
 
 <p align="center">
-<img src="LinkHarvest/assets/login.png" width="90%" alt="LinkHarvest Login">
+<img src="LinkHarvest/assets/login.png" width="40%" alt="LinkHarvest Login">
 </p>
 
 Farmers and commercial buyers enter the same marketplace through role-based workflows.
@@ -501,7 +501,7 @@ Farmers and commercial buyers enter the same marketplace through role-based work
 ## 02 // Reverse Marketplace
 
 <p align="center">
-<img src="LinkHarvest/assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace">
+<img src="LinkHarvest/assets/reverse-marketplace.png" width="40%" alt="LinkHarvest Reverse Marketplace">
 </p>
 
 Buyer demand becomes a direct opportunity for local producers.
@@ -511,7 +511,7 @@ Buyer demand becomes a direct opportunity for local producers.
 ## 03 // HarvestMatch Engine
 
 <p align="center">
-<img src="LinkHarvest/assets/harvest-match.png" width="90%" alt="HarvestMatch Engine">
+<img src="LinkHarvest/assets/harvest-match.png" width="40%" alt="HarvestMatch Engine">
 </p>
 
 Producers are ranked using transparent crop, price, distance and quantity matching.
@@ -521,7 +521,7 @@ Producers are ranked using transparent crop, price, distance and quantity matchi
 ## 04 // Demand-Driven Procurement
 
 <p align="center">
-<img src="LinkHarvest/assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard">
+<img src="LinkHarvest/assets/buyer-demand.png" width="40%" alt="Buyer Demand Dashboard">
 </p>
 
 Commercial buyers publish requirements and discover matching local supply.
@@ -531,7 +531,7 @@ Commercial buyers publish requirements and discover matching local supply.
 ## 05 // Community + Direct Negotiation
 
 <p align="center">
-<img src="LinkHarvest/assets/community.png" width="90%" alt="Community and Direct Negotiation">
+<img src="LinkHarvest/assets/community.png" width="40%" alt="Community and Direct Negotiation">
 </p>
 
 Producers and buyers can discuss logistics, market trends and trade directly.
@@ -541,7 +541,7 @@ Producers and buyers can discuss logistics, market trends and trade directly.
 ## 06 // Geospatial Harvest Intelligence
 
 <p align="center">
-<img src="LinkHarvest/assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence">
+<img src="LinkHarvest/assets/harvest-heatmap.png" width="40%" alt="Harvest Intelligence">
 </p>
 
 Regional production hubs reveal supply concentration and market activity.
@@ -551,7 +551,7 @@ Regional production hubs reveal supply concentration and market activity.
 ## 07 // Agricultural Hub Intelligence
 
 <p align="center">
-<img src="LinkHarvest/assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence">
+<img src="LinkHarvest/assets/agricultural-hub.png" width="40%" alt="Agricultural Hub Intelligence">
 </p>
 
 Local crop volumes, supplying farms, buyer demand and benchmark prices in one view.
