@@ -2,7 +2,7 @@
 
 <p align="center">
 
-<img src="LinkHarvest/assets/reverse-marketplace.png" width="92%" alt="LinkHarvest Reverse Marketplace">
+<img src="LinkHarvest/assets/reverse-marketplace.png" width="83%" alt="LinkHarvest Reverse Marketplace">
 
 </p>
 
@@ -143,12 +143,6 @@ Distance
 
 LinkHarvest uses HarvestMatch, a transparent rule-based scoring engine that evaluates supply-demand compatibility.
 
-Crop & Quality       35%
-Price Parity         25%
-Proximity            20%
-Quantity             20%
-────────────────────────
-Total               100%
 
 Instead of simply showing listings, the platform explains why a particular producer or demand is a strong match.
 
@@ -197,19 +191,19 @@ Geospatial proximity
 Quantity & batch alignment
 Transparent score breakdown
 Explainable matching instead of black-box recommendations
+
+
+Producers can discover buyer opportunities based on the supply they already have available.
+
+Example:
+
+BANANA```text
 Crop & Quality       35%
 Price Parity         25%
 Proximity            20%
 Quantity             20%
 ────────────────────────
 Total               100%
-03 What Can I Sell?
-
-Producers can discover buyer opportunities based on the supply they already have available.
-
-Example:
-
-BANANA
 
 300 kg available
 
@@ -413,9 +407,11 @@ Clear information hierarchy
 Mobile-first layouts
 Offline workflow
 Accessible interaction patterns
+
 📱 Screenshots
 05 // Product Showcase
 <p align="center"> <img src="LinkHarvest/assets/login.png" width="90%" alt="LinkHarvest Login"> </p> <p align="center"> <strong>01 // Dual Persona Entry</strong><br> Farmers and commercial buyers enter the same marketplace through role-based workflows. </p> <br> <p align="center"> <img src="LinkHarvest/assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace"> </p> <p align="center"> <strong>02 // Reverse Marketplace</strong><br> Buyer demand becomes a direct opportunity for local producers. </p> <br> <p align="center"> <img src="LinkHarvest/assets/harvest-match.png" width="90%" alt="HarvestMatch Engine"> </p> <p align="center"> <strong>03 // HarvestMatch Engine</strong><br> Producers are ranked using transparent crop, price, distance and quantity matching. </p> <br> <p align="center"> <img src="LinkHarvest/assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard"> </p> <p align="center"> <strong>04 // Demand-Driven Procurement</strong><br> Commercial buyers publish requirements and discover matching local supply. </p> <br> <p align="center"> <img src="LinkHarvest/assets/community.png" width="90%" alt="Community and Direct Negotiation"> </p> <p align="center"> <strong>05 // Community + Direct Negotiation</strong><br> Producers and buyers can discuss logistics, market trends and trade directly. </p> <br> <p align="center"> <img src="LinkHarvest/assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence"> </p> <p align="center"> <strong>06 // Geospatial Harvest Intelligence</strong><br> Regional production hubs reveal supply concentration and market activity. </p> <br> <p align="center"> <img src="LinkHarvest/assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence"> </p> <p align="center"> <strong>07 // Agricultural Hub Intelligence</strong><br> Local crop volumes, supplying farms, buyer demand and benchmark prices in one view. </p>
+
 🎥 Demo Video
 
 Add your final demonstration video here.
