@@ -1,7 +1,7 @@
 # 📱 LinkHarvest
 
 <p align="center">
-<img src="LinkHarvest/assets/reverse-marketplace.png" width="50%" alt="LinkHarvest Reverse Marketplace">
+<img src="LinkHarvest/assets/reverse-marketplace.png" width="30%" alt="LinkHarvest Reverse Marketplace">
 </p>
 
 <h3 align="center">Don't search for a market. Let the market find you.</h3>
