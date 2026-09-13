@@ -166,85 +166,42 @@ Total               100%
 ---
 
 # 📱 Screenshots
-
-# 📱 Screenshots
-
-## 05 // Product Showcase
+# LinkHarvest
 
 <p align="center">
-  <img src="LinkHarvest/assets/login.png" width="90%" alt="LinkHarvest Login">
+  <img src="LinkHarvest/assets/reverse-marketplace.png" width="92%" alt="LinkHarvest Reverse Marketplace">
+</p>
+
+<h3 align="center">Don't search for a market. Let the market find you.</h3>
+
+<p align="center">
+  A demand-driven agricultural market linkage platform connecting local producers directly with commercial buyers.
 </p>
 
 <p align="center">
-  <strong>01 // Dual Persona Entry</strong><br>
-  Farmers and commercial buyers enter the same marketplace through role-based workflows.
+  <a href="https://github.com/devzzafk/AppSprint-2026/releases/tag/v1.0.0">Download APK</a>
+  &nbsp; • &nbsp;
+  <a href="https://linkharvests.netlify.app/">Live Demo</a>
+  &nbsp; • &nbsp;
+  <a href="https://github.com/devzzafk/AppSprint-2026">GitHub</a>
 </p>
 
-<br>
+---
 
-<p align="center">
-  <img src="LinkHarvest/assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace">
-</p>
+## 01 // The Problem
 
-<p align="center">
-  <strong>02 // Reverse Marketplace</strong><br>
-  Buyer demand becomes a direct opportunity for local producers.
-</p>
+Local producers often have crops ready for sale but no reliable way to discover nearby buyers.
 
-<br>
+At the same time, restaurants, hotels, retailers, wholesalers and institutions regularly need specific crops, quantities, quality grades and price ranges but struggle to find suitable local suppliers.
 
-<p align="center">
-  <img src="LinkHarvest/assets/harvest-match.png" width="90%" alt="HarvestMatch Engine">
-</p>
+Traditional agricultural marketplaces usually work like:
 
-<p align="center">
-  <strong>03 // HarvestMatch Engine</strong><br>
-  Producers are ranked using transparent crop, price, distance and quantity matching.
-</p>
-
-<br>
-
-<p align="center">
-  <img src="LinkHarvest/assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard">
-</p>
-
-<p align="center">
-  <strong>04 // Demand-Driven Procurement</strong><br>
-  Commercial buyers publish requirements and discover matching local supply.
-</p>
-
-<br>
-
-<p align="center">
-  <img src="LinkHarvest/assets/community.png" width="90%" alt="Community and Direct Negotiation">
-</p>
-
-<p align="center">
-  <strong>05 // Community + Direct Negotiation</strong><br>
-  Producers and buyers can discuss logistics, market trends and trade directly.
-</p>
-
-<br>
-
-<p align="center">
-  <img src="LinkHarvest/assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence">
-</p>
-
-<p align="center">
-  <strong>06 // Geospatial Harvest Intelligence</strong><br>
-  Regional production hubs reveal supply concentration and market activity.
-</p>
-
-<br>
-
-<p align="center">
-  <img src="LinkHarvest/assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence">
-</p>
-
-<p align="center">
-  <strong>07 // Agricultural Hub Intelligence</strong><br>
-  Local crop volumes, supplying farms, buyer demand and benchmark prices in one view.
-</p>
+```text
+Seller lists
+     ↓
+Buyer searches
+     ↓
+Buyer discovers
 
 
 # 🎥 Demo Video
