@@ -1,7 +1,7 @@
 # 📱 LinkHarvest
 
 <p align="center">
-<img src="LinkHarvest/assets/reverse-marketplace.png" width="92%" alt="LinkHarvest Reverse Marketplace">
+<img src="LinkHarvest/assets/reverse-marketplace.png" width="50%" alt="LinkHarvest Reverse Marketplace">
 </p>
 
 <h3 align="center">Don't search for a market. Let the market find you.</h3>
@@ -87,32 +87,40 @@ Poor Market Visibility
 Missed Buyer Connections
        ↓
 Unsold / Under-valued Produce
-💡 Solution
-A reverse marketplace built around real demand.
+```
 
-LinkHarvest changes the traditional agricultural marketplace model.
+---
 
-Instead of asking producers to list their products and wait for buyers to discover them, commercial buyers can post what they actually need, and LinkHarvest identifies producers who can potentially fulfill that demand.
+# 💡 Solution
+
+## A reverse marketplace built around real demand.
+
+**LinkHarvest** changes the traditional agricultural marketplace model.
+
+Instead of asking producers to list their products and wait for buyers to discover them, commercial buyers can **post what they actually need**, and LinkHarvest identifies producers who can potentially fulfill that demand.
 
 The platform creates a direct loop:
 
-Demand → Match → Connect → Trade
+> **Demand → Match → Connect → Trade**
 
-🔄 How LinkHarvest Solves the Problem
-01 // Buyers publish real demand
+---
+
+# 🔄 How LinkHarvest Solves the Problem
+
+## 01 // Buyers publish real demand
 
 Commercial buyers can create structured requirements including:
 
-Crop / product
-Quantity required
-Quality or grade
-Target price
-Delivery deadline
-Location
+- Crop / product
+- Quantity required
+- Quality or grade
+- Target price
+- Delivery deadline
+- Location
 
-This transforms vague market demand into a specific procurement opportunity.
+This transforms vague market demand into a **specific procurement opportunity**.
 
-02 // Producers discover relevant opportunities
+## 02 // Producers discover relevant opportunities
 
 Producers don't have to manually search through hundreds of listings.
 
@@ -120,6 +128,7 @@ LinkHarvest surfaces buyer demands that align with their available or expected s
 
 Example:
 
+```text
 WHAT CAN I SELL?
 
 Banana
@@ -135,76 +144,94 @@ Target price
 
 Distance
 12 km
-03 // Matching turns demand into opportunity
+```
 
-LinkHarvest uses HarvestMatch, a transparent rule-based scoring engine that evaluates supply-demand compatibility.
+## 03 // Matching turns demand into opportunity
 
+LinkHarvest uses **HarvestMatch**, a transparent rule-based scoring engine that evaluates supply-demand compatibility.
+
+```text
 Crop & Quality       35%
 Price Parity         25%
 Proximity            20%
 Quantity             20%
 ────────────────────────
 Total               100%
+```
 
-Instead of simply showing listings, the platform explains why a particular producer or demand is a strong match.
+Instead of simply showing listings, the platform explains **why** a particular producer or demand is a strong match.
 
-04 // Producers and buyers connect directly
+## 04 // Producers and buyers connect directly
 
 Once a relevant match is found, both sides can communicate directly.
 
 The platform supports:
 
-Direct messaging
-Trade context
-Price negotiation
-Quantity discussion
-Location sharing
-Deal confirmation
-05 // The transaction can be locked in
+- Direct messaging
+- Trade context
+- Price negotiation
+- Quantity discussion
+- Location sharing
+- Deal confirmation
 
-The Lock In Deal workflow records the agreed:
+## 05 // The transaction can be locked in
 
-Crop
-Quantity
-Price
-Delivery date
-Participants
+The **Lock In Deal** workflow records the agreed:
 
-This creates a clear transition from discovery → negotiation → agreement.
+- Crop
+- Quantity
+- Price
+- Delivery date
+- Participants
 
-✨ Features
-01 // Reverse Marketplace
+This creates a clear transition from **discovery → negotiation → agreement**.
 
-Demand → Supply
+---
 
-Commercial buyers post real-time procurement requirements.
-Producers discover active buyer demands matching their crops.
-Dedicated Producer and Buyer workspaces.
-Seamless role switching between Producer and Buyer.
-Demand-driven discovery instead of a traditional product catalogue.
-02 // HarvestMatch Engine
+# ✨ Features
 
-Find the right producer for the right demand.
+## 01 // Reverse Marketplace
 
-0–100% Fit Index
-Crop & quality compatibility
-Price parity analysis
-Geospatial proximity
-Quantity & batch alignment
-Transparent score breakdown
-Explainable matching instead of black-box recommendations
+**Demand → Supply**
+
+- Commercial buyers post real-time procurement requirements.
+- Producers discover active buyer demands matching their crops.
+- Dedicated Producer and Buyer workspaces.
+- Seamless role switching between Producer and Buyer.
+- Demand-driven discovery instead of a traditional product catalogue.
+
+---
+
+## 02 // HarvestMatch Engine
+
+**Find the right producer for the right demand.**
+
+- 0–100% Fit Index
+- Crop & quality compatibility
+- Price parity analysis
+- Geospatial proximity
+- Quantity & batch alignment
+- Transparent score breakdown
+- Explainable matching instead of black-box recommendations
+
+```text
 Crop & Quality       35%
 Price Parity         25%
 Proximity            20%
 Quantity             20%
 ────────────────────────
 Total               100%
-03 // What Can I Sell?
+```
+
+---
+
+## 03 // What Can I Sell?
 
 Producers can discover buyer opportunities based on the supply they already have available.
 
 Example:
 
+```text
 BANANA
 
 300 kg available
@@ -219,24 +246,28 @@ Target Price
 
 Distance
 12 km
+```
 
 This converts existing inventory into actionable market opportunities.
 
-04 // Direct Negotiation
+---
+
+## 04 // Direct Negotiation
 
 Once a producer and buyer are connected, they can communicate without unnecessary intermediaries.
 
 Features include:
 
-1-to-1 buyer-producer chat
-Persistent trade information
-Crop and quantity context
-Target price visibility
-Negotiation actions
-Deal locking
+- 1-to-1 buyer-producer chat
+- Persistent trade information
+- Crop and quantity context
+- Target price visibility
+- Negotiation actions
+- Deal locking
 
 Example actions:
 
+```text
 [ Confirm ₹48/kg ]
 
 [ Share GPS Location ]
@@ -244,56 +275,73 @@ Example actions:
 [ Adjust Quantity ]
 
 [ Lock In Deal ]
-05 // Community Forum
+```
+
+---
+
+## 05 // Community Forum
 
 LinkHarvest provides a community layer for discussions related to agricultural trade.
 
-Categories
+### Categories
+
+```text
 Price & Mandi Trends
 Logistics & Pooling
 Buyer Direct Contracts
 Farming & Crop Care
+```
 
 Users can:
 
-Search discussions
-Filter topics
-Create posts
-Add tags
-Reply to discussions
-Discuss market trends
-Coordinate logistics
-06 // Vernacular Voice Assistant
+- Search discussions
+- Filter topics
+- Create posts
+- Add tags
+- Reply to discussions
+- Discuss market trends
+- Coordinate logistics
+
+---
+
+## 06 // Vernacular Voice Assistant
 
 Creating a listing should not require extensive typing.
 
 LinkHarvest supports a voice-based listing workflow for:
 
-English
-Malayalam
+- English
+- Malayalam
 
 A producer can speak information such as:
 
+```text
 "500 kilograms of Grade A tomato,
 available next week at around
 ₹32 per kilogram."
+```
 
 The workflow structures the information into:
 
+```text
 Crop
 Quantity
 Quality
 Expected Harvest
 Target Price
+```
 
 This makes the listing workflow more accessible for users who may not be comfortable with complex digital forms.
 
-07 // Offline-First Workflow
+---
+
+## 07 // Offline-First Workflow
 
 Agricultural connectivity can be inconsistent.
 
 LinkHarvest includes a local synchronization workflow for weak or disconnected network conditions.
 
+```text
 Create Listing
       ↓
 Local Sync Queue
@@ -303,15 +351,19 @@ Network Restored
 Synchronize
       ↓
 Supabase
+```
 
 The prototype also includes a network simulator to demonstrate online and offline states.
 
-08 // Shared Logistics & Cold Chain
+---
+
+## 08 // Shared Logistics & Cold Chain
 
 Nearby producers can coordinate shared transport and pooled logistics.
 
 Example:
 
+```text
 Farm A
    ↓
 Farm B
@@ -321,36 +373,48 @@ Farm C
 Collection Hub
    ↓
 Buyer
+```
 
 The prototype also represents simulated cold-chain telemetry:
 
+```text
 Temperature     4.2°C
 Truck Capacity  78%
 Route Status    Active
-09 // Geospatial Harvest Intelligence
+```
+
+---
+
+## 09 // Geospatial Harvest Intelligence
 
 The Harvest Heatmap provides a regional view of agricultural supply and demand.
 
 It highlights:
 
-Production clusters
-Supply concentration
-Buyer activity
-Regional demand
-Price momentum
-Active agricultural hubs
+- Production clusters
+- Supply concentration
+- Buyer activity
+- Regional demand
+- Price momentum
+- Active agricultural hubs
 
 Example regions represented in the prototype:
 
+```text
 Nedumangad
 Kattappana
 Neyyattinkara
-10 // Agricultural Hub Intelligence
+```
+
+---
+
+## 10 // Agricultural Hub Intelligence
 
 The agricultural hub dashboard combines local market information into one view.
 
 Example:
 
+```text
 14.2k kg
 Regional Supply
 
@@ -362,14 +426,19 @@ Active Farms
 
 18
 Active Demands
+```
 
 This helps users understand regional market activity rather than looking only at individual listings.
 
-11 // Authentication & Persona Management
+---
+
+## 11 // Authentication & Persona Management
 
 LinkHarvest supports two primary workspaces.
 
-Producer
+### Producer
+
+```text
 Login
   ↓
 Inventory
@@ -381,7 +450,11 @@ HarvestMatch
 Connection
   ↓
 Negotiation
-Commercial Buyer
+```
+
+### Commercial Buyer
+
+```text
 Login
   ↓
 Post Demand
@@ -393,116 +466,177 @@ HarvestMatch
 Connection
   ↓
 Negotiation
+```
 
 The prototype also provides demo personas for quick evaluation.
 
-12 // Accessibility & Local Usability
+---
+
+## 12 // Accessibility & Local Usability
 
 LinkHarvest includes:
 
-English / Malayalam interface
-Voice-based listing workflow
-High-contrast interface
-Clear information hierarchy
-Mobile-first layouts
-Offline workflow
-Accessible interaction patterns
-📱 Screenshots
-01 // Dual Persona Entry
-<p align="center"> <img src="LinkHarvest/assets/login.png" width="90%" alt="LinkHarvest Login"> </p>
+- English / Malayalam interface
+- Voice-based listing workflow
+- High-contrast interface
+- Clear information hierarchy
+- Mobile-first layouts
+- Offline workflow
+- Accessible interaction patterns
+
+---
+
+# 📱 Screenshots
+
+## 01 // Dual Persona Entry
+
+<p align="center">
+<img src="LinkHarvest/assets/login.png" width="90%" alt="LinkHarvest Login">
+</p>
 
 Farmers and commercial buyers enter the same marketplace through role-based workflows.
 
-02 // Reverse Marketplace
-<p align="center"> <img src="LinkHarvest/assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace"> </p>
+---
+
+## 02 // Reverse Marketplace
+
+<p align="center">
+<img src="LinkHarvest/assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace">
+</p>
 
 Buyer demand becomes a direct opportunity for local producers.
 
-03 // HarvestMatch Engine
-<p align="center"> <img src="LinkHarvest/assets/harvest-match.png" width="90%" alt="HarvestMatch Engine"> </p>
+---
+
+## 03 // HarvestMatch Engine
+
+<p align="center">
+<img src="LinkHarvest/assets/harvest-match.png" width="90%" alt="HarvestMatch Engine">
+</p>
 
 Producers are ranked using transparent crop, price, distance and quantity matching.
 
-04 // Demand-Driven Procurement
-<p align="center"> <img src="LinkHarvest/assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard"> </p>
+---
+
+## 04 // Demand-Driven Procurement
+
+<p align="center">
+<img src="LinkHarvest/assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard">
+</p>
 
 Commercial buyers publish requirements and discover matching local supply.
 
-05 // Community + Direct Negotiation
-<p align="center"> <img src="LinkHarvest/assets/community.png" width="90%" alt="Community and Direct Negotiation"> </p>
+---
+
+## 05 // Community + Direct Negotiation
+
+<p align="center">
+<img src="LinkHarvest/assets/community.png" width="90%" alt="Community and Direct Negotiation">
+</p>
 
 Producers and buyers can discuss logistics, market trends and trade directly.
 
-06 // Geospatial Harvest Intelligence
-<p align="center"> <img src="LinkHarvest/assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence"> </p>
+---
+
+## 06 // Geospatial Harvest Intelligence
+
+<p align="center">
+<img src="LinkHarvest/assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence">
+</p>
 
 Regional production hubs reveal supply concentration and market activity.
 
-07 // Agricultural Hub Intelligence
-<p align="center"> <img src="LinkHarvest/assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence"> </p>
+---
+
+## 07 // Agricultural Hub Intelligence
+
+<p align="center">
+<img src="LinkHarvest/assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence">
+</p>
 
 Local crop volumes, supplying farms, buyer demand and benchmark prices in one view.
 
-🎥 Demo Video
+---
+
+# 🎥 Demo Video
 
 Add your final demonstration video here.
 
-Maximum Duration: 2 minutes
+**Maximum Duration:** 2 minutes
 
 The demonstration should cover:
 
-Problem
-Solution
-Producer workflow
-Buyer workflow
-Demand creation
-HarvestMatch
-Direct negotiation
-Key differentiating features
+- Problem
+- Solution
+- Producer workflow
+- Buyer workflow
+- Demand creation
+- HarvestMatch
+- Direct negotiation
+- Key differentiating features
 
-Demo Link:
+**Demo Link:**  
 https://youtube.com/your-demo-link
 
-📦 APK Download
+---
+
+# 📦 APK Download
 
 The Android APK is available through the GitHub Release.
 
-LinkHarvest v1.0.0
+**LinkHarvest v1.0.0**
 
 https://github.com/devzzafk/AppSprint-2026/releases/tag/v1.0.0
 
-🛠️ Tech Stack
+---
+
+# 🛠️ Tech Stack
 
 LinkHarvest is built as a cross-platform mobile application with a cloud-backed architecture and an offline-first workflow.
 
-Frontend / Mobile Framework
-React Native
-Expo
-TypeScript
-Expo Router
-Backend
-Supabase
-Supabase Auth
-Supabase PostgreSQL
-Supabase Realtime
-Supabase Storage
-Database
-PostgreSQL
-Local persistence / Sync Queue
-Core Database Entities
+## Frontend / Mobile Framework
+
+- **React Native**
+- **Expo**
+- **TypeScript**
+- **Expo Router**
+
+## Backend
+
+- **Supabase**
+- **Supabase Auth**
+- **Supabase PostgreSQL**
+- **Supabase Realtime**
+- **Supabase Storage**
+
+## Database
+
+- **PostgreSQL**
+- **Local persistence / Sync Queue**
+
+### Core Database Entities
+
+```text
 Profiles
 Products
 Demands
 Connections
-APIs / Services
-Service	Purpose
-Supabase Auth	Authentication and user sessions
-Supabase PostgreSQL	Application data
-Supabase Realtime	Live synchronization
-Supabase Storage	File and media storage
-Geospatial Services	Distance and regional matching
-Voice Processing	Voice-to-structured listing workflow
-Architecture
+```
+
+## APIs / Services
+
+| Service | Purpose |
+|---|---|
+| Supabase Auth | Authentication and user sessions |
+| Supabase PostgreSQL | Application data |
+| Supabase Realtime | Live synchronization |
+| Supabase Storage | File and media storage |
+| Geospatial Services | Distance and regional matching |
+| Voice Processing | Voice-to-structured listing workflow |
+
+## Architecture
+
+```text
 ┌─────────────────────────────┐
 │      React Native + Expo    │
 │         TypeScript          │
@@ -523,31 +657,58 @@ Architecture
 │ Auth │ REST │ Realtime      │
 │ Storage │ PostgreSQL        │
 └─────────────────────────────┘
-🚀 Installation
-Clone Repository
+```
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
 git clone https://github.com/devzzafk/AppSprint-2026.git
-Navigate to Project
+```
+
+## Navigate to Project
+
+```bash
 cd AppSprint-2026/LinkHarvest
-Install Dependencies
+```
+
+## Install Dependencies
+
+```bash
 npm install
-Environment Variables
+```
 
-Create a .env file inside the LinkHarvest directory:
+## Environment Variables
 
+Create a `.env` file inside the `LinkHarvest` directory:
+
+```env
 EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
 EXPO_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-Do not commit .env files or private credentials to GitHub.
+Do not commit `.env` files or private credentials to GitHub.
 
-Run Application
+## Run Application
+
+```bash
 npx expo start
+```
 
 The application can then be opened using:
 
-Android Emulator
-Expo Go
-Development Build
-📂 Project Structure
+- Android Emulator
+- Expo Go
+- Development Build
+
+---
+
+# 📂 Project Structure
+
+```text
 AppSprint-2026/
 │
 ├── README.md
@@ -582,13 +743,19 @@ AppSprint-2026/
 │   └── ...
 │
 └── .gitignore
-🌟 Key Highlights
-01 // Demand-first instead of listing-first
+```
+
+---
+
+# 🌟 Key Highlights
+
+## 01 // Demand-first instead of listing-first
 
 Traditional marketplaces generally ask producers to list products and wait for buyers.
 
-LinkHarvest starts with actual buyer demand and works backwards to find relevant supply.
+LinkHarvest starts with **actual buyer demand** and works backwards to find relevant supply.
 
+```text
 Traditional
 
 Seller → Listing → Search → Buyer
@@ -597,76 +764,96 @@ Seller → Listing → Search → Buyer
 LinkHarvest
 
 Buyer Demand → Match → Producer → Connection → Trade
-02 // Explainable Matching
+```
+
+## 02 // Explainable Matching
 
 HarvestMatch does not simply output a recommendation.
 
 It exposes the factors behind the score:
 
+```text
 Crop & Quality       35%
 Price Parity         25%
 Proximity            20%
 Quantity             20%
+```
 
 This makes the matching process easier to understand and validate.
 
-03 // Two-sided Marketplace
+## 03 // Two-sided Marketplace
 
 The application is designed around both sides of the agricultural transaction:
 
+```text
 Producer
    ↕
 LinkHarvest
    ↕
 Commercial Buyer
-04 // Built for Real-World Constraints
+```
+
+## 04 // Built for Real-World Constraints
 
 The prototype addresses challenges beyond basic marketplace discovery:
 
-Connectivity
-Language barriers
-Logistics
-Cold-chain coordination
-Regional supply visibility
-Direct negotiation
-05 // Local-first Approach
+- Connectivity
+- Language barriers
+- Logistics
+- Cold-chain coordination
+- Regional supply visibility
+- Direct negotiation
+
+## 05 // Local-first Approach
 
 The platform focuses on connecting nearby agricultural supply with nearby commercial demand, potentially reducing unnecessary discovery and logistics friction.
 
-🔮 Future Improvements
+---
+
+# 🔮 Future Improvements
 
 Features planned for future versions:
 
-Predictive demand forecasting
-Dynamic mandi price intelligence
-Verified farmer cooperatives
-Digital contracts
-Integrated payment settlement
-Logistics provider integration
-Real IoT-based cold-chain monitoring
-Government procurement integration
-ONDC / open commerce integration
-Regional demand forecasting
-AI-assisted crop quality analysis
-📊 Impact
-Target Users
-Producers
-Small and medium-scale farmers
-Local producer groups
-Agricultural collectives
-Local suppliers
-Buyers
-Restaurants
-Hotels
-Hospitals
-Institutional kitchens
-Retailers
-Wholesalers
-Other commercial businesses
-Benefits
+- Predictive demand forecasting
+- Dynamic mandi price intelligence
+- Verified farmer cooperatives
+- Digital contracts
+- Integrated payment settlement
+- Logistics provider integration
+- Real IoT-based cold-chain monitoring
+- Government procurement integration
+- ONDC / open commerce integration
+- Regional demand forecasting
+- AI-assisted crop quality analysis
+
+---
+
+# 📊 Impact
+
+## Target Users
+
+### Producers
+
+- Small and medium-scale farmers
+- Local producer groups
+- Agricultural collectives
+- Local suppliers
+
+### Buyers
+
+- Restaurants
+- Hotels
+- Hospitals
+- Institutional kitchens
+- Retailers
+- Wholesalers
+- Other commercial businesses
+
+## Benefits
 
 LinkHarvest aims to:
 
+```text
 Improve Market Discovery
           ↓
 Increase Producer Visibility
@@ -678,24 +865,31 @@ Support Better Negotiation
 Improve Local Procurement
           ↓
 Reduce Avoidable Logistics Friction
+```
 
 The platform is designed around a simple principle:
 
-The producer should not always have to search for the market.
+> **The producer should not always have to search for the market.**
 
 Instead, relevant market demand should be able to find the producer.
 
-📜 License
+---
+
+# 📜 License
 
 This project is licensed under the MIT License.
 
-🏆 AppSprint Solution Challenge 2026
+---
 
-Built with ❤️ during AppSprint Solution Challenge 2026
+# 🏆 AppSprint Solution Challenge 2026
+
+Built with ❤️ during **AppSprint Solution Challenge 2026**
 
 Organized by:
 
-App Development IG · muLearn LBSITW
+**App Development IG · muLearn LBSITW**
+
+---
 
 <p align="center">
 
@@ -709,4 +903,4 @@ Demand → Match → Connect → Trade
 
 Built for AppSprint 2026
 
-</p> ```
+</p>
