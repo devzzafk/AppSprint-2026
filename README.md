@@ -167,10 +167,12 @@ Total               100%
 
 # 📱 Screenshots
 
+# 📱 Screenshots
+
 ## 05 // Product Showcase
 
 <p align="center">
-  <img src="assets/login.png" width="90%" alt="LinkHarvest Login">
+  <img src="LinkHarvest/assets/login.png" width="90%" alt="LinkHarvest Login">
 </p>
 
 <p align="center">
@@ -181,7 +183,7 @@ Total               100%
 <br>
 
 <p align="center">
-  <img src="assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace">
+  <img src="LinkHarvest/assets/reverse-marketplace.png" width="90%" alt="LinkHarvest Reverse Marketplace">
 </p>
 
 <p align="center">
@@ -192,7 +194,7 @@ Total               100%
 <br>
 
 <p align="center">
-  <img src="assets/harvest-match.png" width="90%" alt="HarvestMatch Engine">
+  <img src="LinkHarvest/assets/harvest-match.png" width="90%" alt="HarvestMatch Engine">
 </p>
 
 <p align="center">
@@ -203,7 +205,7 @@ Total               100%
 <br>
 
 <p align="center">
-  <img src="assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard">
+  <img src="LinkHarvest/assets/buyer-demand.png" width="90%" alt="Buyer Demand Dashboard">
 </p>
 
 <p align="center">
@@ -214,7 +216,7 @@ Total               100%
 <br>
 
 <p align="center">
-  <img src="assets/community.png" width="90%" alt="Community and Direct Negotiation">
+  <img src="LinkHarvest/assets/community.png" width="90%" alt="Community and Direct Negotiation">
 </p>
 
 <p align="center">
@@ -225,7 +227,7 @@ Total               100%
 <br>
 
 <p align="center">
-  <img src="assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence">
+  <img src="LinkHarvest/assets/harvest-heatmap.png" width="90%" alt="Harvest Intelligence">
 </p>
 
 <p align="center">
@@ -236,13 +238,14 @@ Total               100%
 <br>
 
 <p align="center">
-  <img src="assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence">
+  <img src="LinkHarvest/assets/agricultural-hub.png" width="90%" alt="Agricultural Hub Intelligence">
 </p>
 
 <p align="center">
   <strong>07 // Agricultural Hub Intelligence</strong><br>
   Local crop volumes, supplying farms, buyer demand and benchmark prices in one view.
 </p>
+
 
 # 🎥 Demo Video
 
