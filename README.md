@@ -163,7 +163,6 @@ Proximity            20%
 Quantity             20%
 ────────────────────────
 Total               100%
----
 
 # 📱 Screenshots
 # LinkHarvest
